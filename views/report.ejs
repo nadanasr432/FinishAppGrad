@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>report</title>
+    <link rel="stylesheet" href="css/report.css">
+    <style>
+        @media print {
+            .back, .printR {
+                display: none;
+            }
+            
+#uploadedImage {
+  width: 500px;
+  height: 500px;
+  display: block;
+  margin-top: 10px;
+}
+        }
+        
+        #prediction .data {
+            color: red;
+        }
+        .title1 {
+          text-align: center;
+      }
+      h1.x-ray {
+        color:rgb(45, 45, 174);
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="back">
+            <a href="http://localhost:5000/form">
+                <h1 class="logo"><span>&#8592;</span>GO TO FORM</h1>
+            </a></div>
+            
+            
+        <div>
+            <div class="logo" style="position: fixed; top: 0; right: 0;">
+                <img src="/img/brainIcon.png" alt="Application Icon" style="width: 30px; height: 30px; display: block;">
+                <span class="app-name" style="display: block;">BTD</span>
+              </div>
+        <h1 class="title1">(Report)</h1>
+        </div>
+        <div class="objects">
+            <h1 class="full_name">
+                <span class="label">Full Name:</span>
+                <span class="data"><%= reportData.user.fullName %>.</span>
+            </h1>
+            <h1 class="mobile_number">
+                <span class="label">Mobile Number:</span>
+                <span class="data"><%= reportData.user.phoneNumber %>.</span>
+            </h1>
+            <h1 class="age">
+                <span class="label">Age:</span>
+                <span class="data"><%= reportData.user.age %>.</span>
+            </h1>
+            <h1 class="date">
+                <span class="label">Date:</span>
+                <span class="data"><%= reportData.user.date.toLocaleDateString('en-GB') %>.</span>
+            </h1>
+            <h1 class="chronic_disease">
+                <span class="label">Chronic Disease:</span>
+                <span class="data"><%= reportData.user.chronicDisease %>.</span>
+            </h1>
+            <h1 class="Gender">
+                <span class="label">Gender:</span>
+                <span class="data"><%= reportData.user.gender %>.</span>
+            </h1>
+            <h1 id="prediction">
+                <span class="label">Predict Result:</span>
+                <span class="data"><%= reportData.prediction %></span>
+            </h1>
+            <h1 class="x-ray">MRI image</h1>
+            <img id="uploadedImage" src="<%=reportData.imagePath %>">
+        </div>
+    </header>
+    <div class="printR">
+        <button class="print" onclick="window.print()">🖶 Print as PDF</button>
+    </div>
+</body>
+</html>

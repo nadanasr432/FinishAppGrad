@@ -1,0 +1,132 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+header{
+    margin-top: 25px;
+    margin-left: 20px;
+    font-size: 50px;
+    font-style: italic;
+    
+}
+h1 {
+  color:rgb(145, 145, 254);;
+}
+.logo {
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  color: white;
+  font-size: 40px;
+  text-decoration: none;
+  z-index: 1;
+  color: rgb(103, 103, 220);
+  font-style: italic;
+}
+.logo span {
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+  margin-top: 600px;
+  width: 50%;
+  height: 100%;
+  opacity: 1;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  background-color: rgba(224, 225, 228, 0.5);;
+  margin-top: 50px;
+  margin-left: 750px;
+  
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  opacity: 0.7; /* تعديل قيمة الشفافية حسب الرغبة */
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  color: #000000;
+
+  }
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: #888;
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 20px;opacity: 0.7; /* تعديل قيمة الشفافية حسب الرغبة */
+    
+      background-color: rgba(255, 255, 255, 0.7);
+}
+.dot-container .dot {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  
+}
+
+.dot-container .dot:hover,
+.dot-container .dot.active {
+    background-color: rgb(103, 103, 220);;
+    opacity: 1;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #5f39c7;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}

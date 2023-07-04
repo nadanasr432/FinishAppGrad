@@ -1,0 +1,120 @@
+<!D<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        body {
+            background-image: url("/img/form.jpg");
+            background-repeat: no-repeat;
+            background-size: 96%; /* يمكنك تغيير القيمة حسب الحجم المطلوب */
+        
+        }
+        .image {
+            position: relative;
+            display: block;
+        }
+        header{
+            margin-top: 25px;
+            margin-left: 20px;
+            font-size: 50px;
+            font-style: italic;
+            
+        }
+        h1 {
+          color:rgb(145, 145, 254);;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            z-index: 1;
+            color: rgb(103, 103, 220);
+            font-style: italic;
+        }
+        .logo span {
+            font-size: 30px;
+            vertical-align: middle;
+        }
+   
+    </style>
+</head>
+<body> 
+    
+    <header>
+        <a href="http://localhost:5000/home" ><h1 class="logo"><span>&#8592;</span>Back To Home</h1></a>
+        <div class="logo1" style="position: fixed; top: 0; right: 0;">
+            <img src="/img/brainIcon.png" alt="Application Icon" style="width: 30px; height: 30px; display: block;">
+            <span class="app-name" style="display: block;font-size: 14px;color: rgb(103, 103, 220) ">BTD</span>
+          </div>
+    </header>
+    
+    <div class="form-main">
+        <div class="form-form">
+            <form action="http://localhost:5000/form" class="form" method="POST" enctype="multipart/form-data">
+                <div class="form-mb">
+                    <label for="guest" class="formlabel">
+                        patient's full name
+                    </label>
+                    <input type="text" name="fullName" placeholder="Full Name" class="formbold-form-input" />
+                </div>
+
+
+                <div class="flex flex-wrap formbold--mx-3">
+                    <div class="w-full sm:w-half formbold-px-3">
+                        <div class="form-mb">
+                            <label for="lName" class="formlabel"> Phone Number</label>
+                            <input class="formbold-form-input" name="phoneNumber" placeholder="Phone Number" />
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-half formbold-px-3">
+                        <div class="form-mb">
+                            <label for="fName" class="formlabel"> patient's Age</label>
+                            <input class="formbold-form-input" name="age" type="number" placeholder="22" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-wrap formbold--mx-3">
+                    <div class="w-full sm:w-half formbold-px-3">
+                        <div class="form-mb">
+                            <label for="lName" class="formlabel"> Date</label>
+                            <input class="formbold-form-input" name="date" type="date" />
+                        </div>
+                    </div>
+                    <div class="w-full sm:w-half formbold-px-3">
+                        <div class="form-mb">
+                            <label for="fName" class="formlabel"> patient's Chronic Disease</label>
+                            <input class="formbold-form-input" name="chronicDisease" type="text" placeholder="----------" />
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="flex form-mb">
+                    <p class="Gender">Gender</p>
+                    <div class="flex">
+                        <input class="formbold-radio" type="radio" name="gender" id="radioButton1" value="Male" />
+                        <label for="radioButton1" class="formbold-radio-label"> Male </label>
+                    </div>
+                    <div class="flex">
+                        <input class="formbold-radio" type="radio" name="gender" id="radioButton2" value="Female" />
+                        <label for="radioButton2" class="formbold-radio-label"> Female </label>
+                    </div>
+                    <input type="file" name="image" accept="image/*">
+                </div>
+
+                <div>
+                    <button class="formbold-btn" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

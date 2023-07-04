@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home.css">
+    <style>
+        
+body{
+    position: relative;
+    background-size: 77%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("img/neurologis.jpg");
+    font-family: 'Open Sans', 'sans-serif';
+    
+
+    
+    overflow: hidden;
+  }
+    </style>
+    
+ </head>
+<body>
+    <header>
+        <a href="http://localhost:5000/form" ><h1 class="logo"> GO TO FORM<span>&#8594;</span> </h1></a>
+        <div class="logo1" style="position: fixed; top: 0; right: 0;">
+          <img src="/img/brainIcon.png" alt="Application Icon" style="width: 30px; height: 30px; display: block;">
+          <span class="app-name" style="display: block;font-size: 14px;color: rgb(103, 103, 220) ">BTD</span>
+        </div>
+    </header>
+    
+
+   <div class="slideshow-container">
+
+    <div class="mySlides">
+      <q>A brain tumor occurs when abnormal cells form within the brain.</q>
+      
+    </div>
+    
+    <div class="mySlides">
+      <q>There are two main types of tumors: malignant tumors and benign (non-cancerous) tumors.</q>
+      
+    </div>
+    
+    <div class="mySlides">
+      <q>These can be further classified as primary tumors, which start within the brain, and secondary tumors, which most commonly have spread from tumors located outside the brain, known as brain metastasis tumors..</q>
+      
+    </div>
+    <div>
+    
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+       <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+    
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    
+</div>
+    
+    
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+    </div>
+
+
+</body>

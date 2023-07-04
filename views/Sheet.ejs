@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Excel Viewer</title>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    td {
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    tr:hover {
+      background-color: #e3e3e3;
+    }
+
+    .no-data-row td {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="excelFileInput">
+  <table id="excelTable"></table>
+  
+  <script>
+    const excelFileInput = document.getElementById('excelFileInput');
+    const excelTable = document.getElementById('excelTable');
+    
+    excelFileInput.addEventListener('change', handleFile, false);
+    
+    function handleFile(e) {
+      const files = e.target.files;
+      if (files && files.length > 0) {
+        const file = files[0];
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+          const data = new Uint8Array(e.target.result);
+          const workbook = XLSX.read(data, { type: 'array' });
+          const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+          const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+          const html = generateTableHTML(jsonData);
+          excelTable.innerHTML = html;
+
+          if (jsonData.length > 1) {
+            const formData = {
+              fullName: jsonData[1][0],
+              phoneNumber: jsonData[1][1],
+              age: jsonData[1][2],
+              date: jsonData[1][3],
+              chronicDisease: jsonData[1][4],
+              gender: jsonData[1][5]
+            };
+            
+            fetch('http://localhost:5000/form', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(formData)
+            })
+            .then(response => {
+              if (response.ok) {
+                console.log('User data saved successfully');
+              } else {
+                console.error('Failed to save user data');
+              }
+            })
+            .catch(error => {
+              console.error('Failed to save user data', error);
+            });
+          }
+        };
+        
+        reader.readAsArrayBuffer(file);
+      }
+    }
+    
+    function generateTableHTML(data) {
+      let html = '';
+      
+      html += '<tr>';
+      for (let header of data[0]) {
+        html += '<th>' + header + '</th>';
+      }
+      html += '</tr>';
+      
+      for (let i = 1; i < data.length; i++) {
+        html += '<tr>';
+        
+        for (let cell of data[i]) {
+          html += '<td>' + cell + '</td>';
+        }
+        
+        html += '</tr>';
+      }
+      
+      if (data.length === 1) {
+        html += '<tr class="no-data-row"><td colspan="' + data[0].length + '">No data available</td></tr>';
+      }
+      
+      return html;
+    }
+  </script>
+</body>
+</html>

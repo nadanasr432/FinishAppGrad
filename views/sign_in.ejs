@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="css/signin.css">
+</head>
+
+<body>
+  <header>
+    <img src="img/group2.jpg">
+  </header>
+  <section class="container">
+    <form action="http://localhost:5000/sign_in" class="form" method="POST">
+      <p class="title">Sign In Now</p>
+      <div class="input-box">
+        <label class="email_address">Email address</label>
+        <input type="text" name="emailAddress" placeholder="Enter email address" required />
+      </div>
+
+      <div class="input-box">
+        <label class="password">Password</label>
+        <input type="password" name="password" placeholder="Enter password" required />
+      </div>
+      <div class="option_field">
+        <span class="checkbox">
+          <input type="checkbox" id="check" />
+          <label for="check">Remember me</label>
+        </span>
+        <a href="http://localhost:5000/forgetpassword" class="forgot_pw">Forgot password?</a>
+      </div>
+  </section>
+  <div class="dowwn">
+    <button class="signin" type="submit">SIGN IN</button>
+    <div class="downsign">
+      <h2>Don't have an account?</h2>
+      <a href="http://localhost:5000/sign_up" class="c_account">Create account</a>
+    </div>
+  </div>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+position: relative;
+background-size:  100% 100%;
+background-attachment: fixed;
+
+background-image: url("/img/welcome.jpg");
+}
+header{
+
+  align-items: center;
+  margin: 30px;
+}
+
+.logo{
+  margin-top: 0px;
+  margin-left: 0px;
+  font-size: 70px;
+  color:  rgba(104, 85, 224, 1);
+  font-family: system-ui;
+
+}
+.logo2{
+color:  rgba(104, 85, 224, 1);
+margin-left: 10px;
+margin-top: 5px;
+
+}
+header h2 {
+  margin-top: 10px;
+  margin-left: 50px;
+  font-size: 22px;
+  color: rgba(104, 85, 224, 0.6);
+font-family: 'Times New Roman', Times, serif;
+}.sign {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  text-align: right;
+}
+
+.sign button {
+  
+  cursor: pointer;
+  border: 0;
+  border-radius: 18px;
+  font-weight: 700;
+  margin: 0 10px;
+  width: 350px;
+  padding: 10px 0;
+  box-shadow: 0 0 20px rgba(126, 120, 167, 0.2);
+  transition: 0.4s;
+  font-size: 20px;
+  
+}
+
+.signin{
+  color:  rgba(104, 85, 224, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgb(57, 176, 183);
+}
+
+.signup {
+  color: rgba(104, 85, 224, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(104, 85, 224, 1);
+}
+
+button:hover {
+  color: white;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
+}
+.top{
+  
+  color: rgba(104, 85, 224, 1);
+  font-size: 68px;
+  font-weight: 800;
+  text-align: center;
+}
+.down {
+  color: rgb(159, 149, 223);
+  font-style: italic;
+  font-size: 20px;
+  
+    text-align: center;
+  
+  
+}
